@@ -3,57 +3,6 @@ import pandas as pd
 from fastapi import FastAPI, File, UploadFile, HTTPException, status
 from pydantic import ValidationError
 
-print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@2")
-try:
-    #PATH DEBUG
-    import os
-    import db# Replace 'my_module' with the actual module name
-
-    print("db")
-    # Get the path to the module file
-    module_file_path = db.__file__
-    print(f"Module file path: {module_file_path}")
-
-    # Get the directory containing the module
-    module_dir_path = os.path.dirname(module_file_path)
-    print(f"Module directory path: {module_dir_path}")
-except:
-    print("db - failed")
-print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@2")
-try:
-    #PATH DEBUG
-    import os
-    import app.db# Replace 'my_module' with the actual module name
-
-    print("app.db")
-    # Get the path to the module file
-    module_file_path = app.db.__file__
-    print(f"Module file path: {module_file_path}")
-
-    # Get the directory containing the module
-    module_dir_path = os.path.dirname(module_file_path)
-    print(f"Module directory path: {module_dir_path}")
-except:
-    print("app.db - failed")
-print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@2")
-try:
-    import app.app.db# Replace 'my_module' with the actual module name
-
-    print("app.app.db")
-    # Get the path to the module file
-    module_file_path = app.db.__file__
-    print(f"Module file path: {module_file_path}")
-
-    # Get the directory containing the module
-    module_dir_path = os.path.dirname(module_file_path)
-    print(f"Module directory path: {module_dir_path}")
-except:
-    print("app.app.db - failed")
-
-
-
-
-
 from app.db import insert_to_db
 from app.models import Threat, TopThreatsResponse
 
