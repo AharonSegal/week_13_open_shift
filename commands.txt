@@ -15,12 +15,8 @@ oc apply -f k8s/
 
 oc get pods
 oc get svc
-oc get statefulset
 
 oc expose service threat-api-svc
 
 oc get routes
 
-
-oc whoami --show-console
-https://console-openshift-console.apps.rm2.thpm.p1.openshiftapps.com
