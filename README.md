@@ -1,1 +1,4 @@
-# week_13_open_shift
+name: aharon segal 
+id: 204806889 
+class: negev 
+

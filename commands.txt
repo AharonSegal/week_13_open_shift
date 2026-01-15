@@ -3,27 +3,24 @@
 +-----------------+
 
 docker build --no-cache -t aharonsegal/threat-api:v1 .
-docker images
-docker run -d -p 8000:8000 --name threat-api-containerr aharonsegal/threat-api:v1
-curl http://localhost:8000/docs
 docker push "aharonsegal/threat-api:v1"
 
 +---------------------+
-| Kubernetes COMMANDS |
+| OpenShift COMMANDS  |
 +---------------------+
 
-# START
-minikube start
-kubectl get nodes
-kubectl config current-context
+oc login --token=sha256~Kus2koC994n7scsVJ90wG6aNryFrk8HonJJQ40qaKjo --server=https://api.rm2.thpm.p1.openshiftapps.com:6443
 
-# Create
-kubectl apply -f k8s/
+oc apply -f k8s/
 
-kubectl describe service threat-api-service
-kubectl get svc        
-kubectl get deploy    
+oc get pods
+oc get svc
+oc get statefulset
 
-# RUN
-minikube service threat-api-service
+oc expose service threat-api-svc
 
+oc get routes
+
+
+oc whoami --show-console
+https://console-openshift-console.apps.rm2.thpm.p1.openshiftapps.com
